@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chotu Barber | Premium Hair & Grooming</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0b0b0d;
+    color:#fff;
+    line-height:1.6;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(10,10,12,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #29292d;
+}
+
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#d6a354;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#d6a354;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    background:
+    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.82)),
+    url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 15px;
+    border:1px solid #d6a354;
+    color:#d6a354;
+    border-radius:30px;
+    font-size:12px;
+    margin-bottom:20px;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    font-size:clamp(45px,8vw,82px);
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#d6a354;
+}
+
+.hero p{
+    color:#ccc;
+    max-width:600px;
+    margin:0 auto 30px;
+    font-size:17px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:13px 22px;
+    border-radius:7px;
+    font-weight:700;
+    display:inline-block;
+}
+
+.primary{
+    background:#d6a354;
+    color:#111;
+}
+
+.secondary{
+    border:1px solid #777;
+    color:white;
+}
+
+section{
+    padding:85px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#d6a354;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-top:7px;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:15px;
+    height:420px;
+    object-fit:cover;
+}
+
+.about-text h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.about-text p{
+    color:#bbb;
+    margin-bottom:15px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.feature{
+    background:#151519;
+    padding:18px;
+    border-radius:10px;
+    border:1px solid #27272b;
+}
+
+.feature strong{
+    color:#d6a354;
+    display:block;
+    margin-bottom:4px;
+}
+
+.services{
+    background:#111114;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    background:#19191d;
+    border:1px solid #29292e;
+    padding:24px;
+    border-radius:12px;
+    transition:.25s;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    border-color:#d6a354;
+}
+
+.service h3{
+    margin-bottom:7px;
+}
+
+.service p{
+    color:#999;
+    font-size:14px;
+}
+
+.price{
+    color:#d6a354;
+    font-size:21px;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+}
+
+.contact{
+    background:#111114;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    background:#19191d;
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #29292e;
+}
+
+.contact-card h3{
+    color:#d6a354;
+    margin-bottom:12px;
+}
+
+.contact-card p{
+    color:#bbb;
+    margin:8px 0;
+}
+
+.contact-buttons{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+footer{
+    padding:30px 20px;
+    text-align:center;
+    color:#777;
+    border-top:1px solid #252529;
+}
+
+footer strong{
+    color:#d6a354;
+}
+
+@media(max-width:800px){
+    .nav-links{
+        display:none;
+    }
+
+    .about,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+    .service-grid,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    section{
+        padding:65px 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="navbar">
+    <div class="logo">CHOTU <span>BARBER</span></div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-content">
+
+    <div class="badge">PREMIUM BARBER & GROOMING</div>
+
+    <h1>LOOK SHARP.<br><span>FEEL CONFIDENT.</span></h1>
+
+    <p>
+        Professional haircuts, beard styling and grooming
+        for a fresh look that fits your style.
+    </p>
+
+    <div class="buttons">
+        <a class="btn primary" href="https://wa.me/919999999999?text=Hello%20Chotu%20Barber%2C%20I%20want%20to%20book%20an%20appointment.">
+            WhatsApp Appointment
+        </a>
+
+        <a class="btn secondary" href="tel:+919999999999">
+            Call Now
+        </a>
+    </div>
+
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+
+    <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=80" alt="Chotu Barber">
+
+        <div class="about-text">
+            <small style="color:#d6a354;letter-spacing:3px;">ABOUT US</small>
+
+            <h2>Welcome to Chotu Barber</h2>
+
+            <p>
+                Chotu Barber is your local destination for clean,
+                stylish and professional grooming.
+            </p>
+
+            <p>
+                Whether you want a classic haircut, modern fade,
+                beard styling or a complete grooming session,
+                we've got you covered.
+            </p>
+
+            <div class="features">
+                <div class="feature">
+                    <strong>01</strong>
+                    Clean & Hygienic
+                </div>
+
+                <div class="feature">
+                    <strong>02</strong>
+                    Skilled Barber
+                </div>
+
+                <div class="feature">
+                    <strong>03</strong>
+                    Affordable Prices
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<section class="services" id="services">
+<div class="container">
+
+    <div class="section-title">
+        <small>PRICE LIST</small>
+        <h2>Our Services</h2>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service">
+            <h3>Classic Haircut</h3>
+            <p>Clean and professional everyday haircut.</p>
+            <div class="price">₹100</div>
+        </div>
+
+        <div class="service">
+            <h3>Fade Haircut</h3>
+            <p>Modern fade with a sharp finish.</p>
+            <div class="price">₹150</div>
+        </div>
+
+        <div class="service">
+            <h3>Hair + Beard</h3>
+            <p>Complete haircut and beard styling.</p>
+            <div class="price">₹200</div>
+        </div>
+
+        <div class="service">
+            <h3>Beard Styling</h3>
+            <p>Shape, trim and style your beard.</p>
+            <div class="price">₹80</div>
+        </div>
+
+        <div class="service">
+            <h3>Clean Shave</h3>
+            <p>Traditional clean shaving service.</p>
+            <div class="price">₹70</div>
+        </div>
+
+        <div class="service">
+            <h3>Hair Styling</h3>
+            <p>Style your hair for your special occasion.</p>
+            <div class="price">₹100</div>
+        </div>
+
+        <div class="service">
+            <h3>Head Massage</h3>
+            <p>Relaxing head massage session.</p>
+            <div class="price">₹100</div>
+        </div>
+
+        <div class="service">
+            <h3>Facial</h3>
+            <p>Refreshing grooming and facial care.</p>
+            <div class="price">₹250</div>
+        </div>
+
+        <div class="service">
+            <h3>Kids Haircut</h3>
+            <p>Simple and stylish haircut for kids.</p>
+            <div class="price">₹80</div>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<section id="gallery">
+<div class="container">
+
+    <div class="section-title">
+        <small>OUR WORK</small>
+        <h2>Salon Gallery</h2>
+    </div>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=800&q=80" alt="Barber haircut">
+
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="Barber styling">
+
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Barbershop">
+
+        <img src="https://images.unsplash.com/photo-1622288432450-277d0fef5ed9?auto=format&fit=crop&w=800&q=80" alt="Haircut">
+
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80" alt="Beard styling">
+
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80" alt="Salon interior">
+
+    </div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+
+    <div class="section-title">
+        <small>GET IN TOUCH</small>
+        <h2>Visit Chotu Barber</h2>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <h3>📍 Address</h3>
+            <p>Shop No. 12, Main Market, Varanasi, Uttar Pradesh</p>
+
+            <h3 style="margin-top:22px;">🕐 Opening Hours</h3>
+            <p>Monday – Sunday: 9:00 AM – 9:00 PM</p>
+        </div>
+
+        <div class="contact-card">
+            <h3>📞 Contact</h3>
+            <p>+91 99999 99999</p>
+
+            <div class="contact-buttons">
+
+                <a class="btn primary"
+                   href="tel:+919999999999">
+                   Call Now
+                </a>
+
+                <a class="btn secondary"
+                   href="https://wa.me/919999999999?text=Hello%20Chotu%20Barber%2C%20I%20want%20to%20book%20an%20appointment.">
+                   WhatsApp
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+<footer>
+    © 2026 <strong>Chotu Barber</strong>. All Rights Reserved.
+</footer>
+
+</body>
+</html>
